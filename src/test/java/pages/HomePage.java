@@ -1,6 +1,7 @@
 package pages;
 
 import com.boxed.web.BaseTest;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -104,6 +105,10 @@ public class HomePage extends BaseTest {
     }
     public boolean verifyCheckOutDisabledButton(){
         return grayedOutCheckOutButton.isEnabled();
+    }
+    public void JsClickLoginBtn(){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].click();", loginButton);
     }
 
 }
